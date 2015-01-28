@@ -1,8 +1,11 @@
 TEMPLATE = app
 
-QT += qml quick
+QT += qml quick serialport widgets
 
-SOURCES += main.cpp
+SOURCES += main.cpp \
+    circleprogress.cpp \
+    console.cpp \
+    serial.cpp
 
 RESOURCES += qml.qrc
 
@@ -11,3 +14,8 @@ QML_IMPORT_PATH =
 
 # Default rules for deployment.
 include(deployment.pri)
+
+HEADERS += \
+    circleprogress.h \
+    serial.h \
+    console.h

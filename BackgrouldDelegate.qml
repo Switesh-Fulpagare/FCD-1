@@ -6,7 +6,7 @@ Item {
 
     Rectangle {
         id: backgroundRec
-        anchors.centerIn: parent; width: 270; height: 170
+        anchors.centerIn: parent; width: 245; height: 170
         color: "transparent"
         antialiasing: true
         radius: 10

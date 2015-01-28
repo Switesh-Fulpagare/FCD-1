@@ -37,8 +37,7 @@ FocusScope {
             scalee:1
         }
         ListElement{
-            sourcee:"image/Pointer5.png"
-            scalee:1
+            source:"image/Pointer5.png"
         }
         ListElement{
             sourcee:"image/Pointer6.png"
@@ -92,5 +91,4 @@ FocusScope {
             scalee:0.3
         }
     }
-
 }
