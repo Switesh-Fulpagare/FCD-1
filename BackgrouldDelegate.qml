@@ -36,6 +36,8 @@ Item {
         case 1:
             cluster.configurableBackground=""
             cluster.configurableBackground_index = 12
+            cluster.skin_12_configurablePointer_index = 1;
+            cluster.skin_3_configurableDial_index = 1
             rpm_active.opacity   = cluster.startFlag==true? 0:0
             speed_active.opacity = cluster.startFlag==true? 0:0
             digitalSpeed.opacity   = cluster.startFlag==true? 0:0
@@ -44,6 +46,8 @@ Item {
         case 2:
             cluster.configurableBackground=""
             cluster.configurableBackground_index = 3
+            cluster.skin_12_configurablePointer_index = 1;
+            cluster.skin_3_configurableDial_index = 1
             digitalSpeed.opacity   = cluster.startFlag==true? 0:0
             break;
 
