@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'circleprogress.h'
 **
-** Created by: The Qt Meta Object Compiler version 67 (Qt 5.3.1)
+** Created by: The Qt Meta Object Compiler version 67 (Qt 5.2.1)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
@@ -12,7 +12,7 @@
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'circleprogress.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
-#error "This file was generated using the moc from 5.3.1. It"
+#error "This file was generated using the moc from 5.2.1. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
@@ -20,12 +20,12 @@
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_CircleGraph_t {
     QByteArrayData data[19];
-    char stringdata[187];
+    char stringdata[188];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
-    qptrdiff(offsetof(qt_meta_stringdata_CircleGraph_t, stringdata) + ofs \
-        - idx * sizeof(QByteArrayData)) \
+    offsetof(qt_meta_stringdata_CircleGraph_t, stringdata) + ofs \
+        - idx * sizeof(QByteArrayData) \
     )
 static const qt_meta_stringdata_CircleGraph_t qt_meta_stringdata_CircleGraph = {
     {
@@ -54,7 +54,7 @@ QT_MOC_LITERAL(18, 176, 10)
     "setColor\0setstartAngle\0args\0setEndValue\0"
     "setspanAngle\0endValueFromPoint\0x\0y\0"
     "endValue\0color\0startAngle\0spanAngle\0"
-    "multicolor"
+    "multicolor\0"
 };
 #undef QT_MOC_LITERAL
 
@@ -72,20 +72,20 @@ static const uint qt_meta_data_CircleGraph[] = {
        2,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    1,   64,    2, 0x06 /* Public */,
-       4,    1,   67,    2, 0x06 /* Public */,
+       1,    1,   64,    2, 0x06,
+       4,    1,   67,    2, 0x06,
 
  // slots: name, argc, parameters, tag, flags
-       5,    1,   70,    2, 0x09 /* Protected */,
-       6,    1,   73,    2, 0x09 /* Protected */,
-       7,    1,   76,    2, 0x09 /* Protected */,
-       9,    1,   79,    2, 0x09 /* Protected */,
-      10,    1,   82,    2, 0x09 /* Protected */,
+       5,    1,   70,    2, 0x09,
+       6,    1,   73,    2, 0x09,
+       7,    1,   76,    2, 0x09,
+       9,    1,   79,    2, 0x09,
+      10,    1,   82,    2, 0x09,
 
  // methods: name, argc, parameters, tag, flags
-      11,    2,   85,    2, 0x02 /* Public */,
-      11,    1,   90,    2, 0x22 /* Public | MethodCloned */,
-      11,    0,   93,    2, 0x22 /* Public | MethodCloned */,
+      11,    2,   85,    2, 0x02,
+      11,    1,   90,    2, 0x22,
+      11,    0,   93,    2, 0x22,
 
  // signals: parameters
     QMetaType::Void, QMetaType::Int,    3,
@@ -200,7 +200,6 @@ int CircleGraph::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
         case 2: *reinterpret_cast< int*>(_v) = startAngle(); break;
         case 3: *reinterpret_cast< int*>(_v) = spanAngle(); break;
         case 4: *reinterpret_cast< bool*>(_v) = multicolor(); break;
-        default: break;
         }
         _id -= 5;
     } else if (_c == QMetaObject::WriteProperty) {
@@ -211,7 +210,6 @@ int CircleGraph::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
         case 2: setstartAngle(*reinterpret_cast< int*>(_v)); break;
         case 3: setspanAngle(*reinterpret_cast< int*>(_v)); break;
         case 4: setmulticolor(*reinterpret_cast< bool*>(_v)); break;
-        default: break;
         }
         _id -= 5;
     } else if (_c == QMetaObject::ResetProperty) {

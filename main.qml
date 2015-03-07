@@ -4,11 +4,12 @@ import QtQuick.Controls 1.1
 import CircleGraph 1.0
 import serial 1.0
 
+
 ApplicationWindow {
     visible: true
     width: 1280
     height: 480
-    //visibility:Window.FullScreen
+    visibility:Window.FullScreen
 
     Rectangle {
         id: cluster
@@ -20,13 +21,20 @@ ApplicationWindow {
 
 
         property bool startFlag: false
+        property bool menuFlag: true
+        property bool startStopEnable: false
+        property int  startStop: 0
+        property int  menu: 0
+        property bool startStopActive: false
+        property bool flipped: false
+        property int  navigation_step:0
         property real dialOpacity : 0
-        property real  rpmValue: 0
-        property real  speedValue: 0
+        property real rpmValue: 0
+        property real speedValue: 0
         property int  gear: 0
-        property int fuelValue: 30
-        property int fuelDummy:30
-        property int tempDummy:0
+        property int  fuelValue: 30
+        property int  fuelDummy:30
+        property int  tempDummy:0
 
         property bool turn_rightFlag: false
         property bool turn_leftFlag: false
@@ -171,11 +179,6 @@ ApplicationWindow {
                 //smooth: true
                 source: "image/Music icon.png"
 
-                focus: true
-                Keys.onRightPressed: music_icon.x = music_icon.x + 20
-                Keys.onLeftPressed: music_icon.x = music_icon.x - 20
-                Keys.onUpPressed: music_icon.y = music_icon.y - 20
-                Keys.onDownPressed: music_icon.y = music_icon.y + 20
 
 
             }
@@ -802,6 +805,8 @@ ApplicationWindow {
             visible: false
             font.pixelSize: 15
         }
+
+
 
         Item{
             id:skin_9
@@ -1624,7 +1629,110 @@ ApplicationWindow {
         }
 
 
+        Keys.onEscapePressed:
+        {
+          cluster.navigation_step -= 1;
 
+          switch(cluster.navigation_step)
+          {
+              case 0:
+                    listmenu.focus=false
+                    cluster.menu = 0
+                    cluster.startStop = 0
+                   break
+              case 1:
+                  if(cluster.startStopEnable == true)
+                  {
+                   cluster.startStop = 0
+                  }
+                  else{
+                    listmenu.focus=false
+                    cluster.menu = 1
+                  }
+                   break
+              case 2:
+                    listmenu.focus=true
+                    cluster.menu = 0
+                  break
+             default:
+                 cluster.navigation_step=0
+                   if((cluster.menuFlag == true))//||(cluster.menu == 1)
+                   {
+                    cluster.startStop = 1                    
+                    cluster.menu = 0
+                    cluster.menuFlag = false
+                   }
+                   else if((cluster.startStopEnable == true))//||(cluster.startStop == 1)
+                   {
+                    cluster.menu = 1
+                    cluster.startStop = 0
+                    cluster.startStopEnable = false
+                   }
+                   else if((cluster.startStop == 1)||(cluster.menu == 1))
+                   {
+                    if(cluster.startStop == 1){cluster.startStopEnable = true;cluster.menuFlag = false;}
+                    else if (cluster.menu == 1){cluster.menuFlag = true;cluster.startStopEnable = false;}
+
+                    cluster.menu = 0
+                    cluster.startStop = 0
+
+                   }
+                /* if(cluster.menu == 0 ){cluster.menu = 1;cluster.menuFlag = true }
+                 else if(cluster.menu == 1 ){cluster.menu = 0;cluster.menuFlag = false}
+                 else if(cluster.startStop == 1){cluster.startStop = 0;cluster.startStopEnable = false}
+                 else{cluster.startStop = 1;cluster.startStopEnable = true}*/
+
+
+          }
+        }
+        Keys.onReturnPressed:
+        {
+          cluster.navigation_step += 1;
+          switch(cluster.navigation_step)
+          {
+              case 0:
+                  listmenu.focus=false
+                  cluster.menu = 0
+                  cluster.startStop = 0
+                   break
+              case 1:
+                    if((cluster.menuFlag == true)||(cluster.menu == 1))
+                      {
+                       cluster.menuFlag = true
+                       cluster.menu = 1
+                       listmenu.focus=false
+                      }
+                    else if(cluster.startStop == 1)
+                      {
+                       cluster.startStopEnable = true
+                       startstop()
+                      }
+
+                   break
+              case 2:
+                      if(cluster.startStop == 1 )//cluster.startStopEnable == true
+                      {startstop()}
+                      else
+                      {
+                       listmenu.focus=true
+                       cluster.menu = 0
+                      }
+                   break
+              case 3:
+                      if(cluster.startStop == 1 )//cluster.startStopEnable == true
+                      {
+                       cluster.navigation_step = 1
+                       startstop()
+                      }
+                      else
+                      {listmenu.focus=false;}
+                  break
+              default :
+                  //cluster.navigation_step += 1;
+                  break
+
+        }
+    }
         FocusScope {
             id: configurableFocus
             z:5;width: parent.width; height: parent.height
@@ -1640,6 +1748,7 @@ ApplicationWindow {
                 antialiasing: true
                 radius: 10
                 opacity:0
+                focus:true
 
                 Text{
                     id:menu
@@ -1650,31 +1759,25 @@ ApplicationWindow {
                 }
 
                 states: State {
-                    name: "focusMenu"; when: menuOption.activeFocus
+                    name: "focusMenu"; when: (cluster.menu == 1) //&&(cluster.startStopEnable == false)) //(cluster.menuFlag == true)
                     PropertyChanges { target: menuOption; color: "#FCFFF5"; scale: 1.1; opacity:1}
                     PropertyChanges { target: menu; font.pixelSize: 16 }
                 }
 
                 transitions: Transition {
                     NumberAnimation { properties: "scale"; duration: 100 }
-                }
+                }               
 
-                activeFocusOnTab: true //if(cluster.startFlag == false)true;else false;
-                Keys.onSpacePressed: listmenu.focus=true
+                //Keys.onEnterPressed: Pathview_menu.focus=true
 
-                Keys.onEnterPressed: Pathview_menu.focus=true
             }
-
 
             Listmenu {
                 id: listmenu
                 y:140; width: parent.width; height: parent.height ;anchors.margins:3
                 opacity:0
 
-            }/**/
-
-
-
+            }
 
             PointerView{
                 id:viewPointeroption ;width: 350; height:350;x:-1300;y:100;z:3
@@ -1700,18 +1803,24 @@ ApplicationWindow {
                 width:parent.width;height:320;y:30
                 opacity:0
 
-                states: State {
-                    name: "focusStartStopButton"; when: startStopbutton.activeFocus
-                    PropertyChanges { target: startStopbutton; scale: 0.9;opacity:1 }
-
+                states: State
+                {
+                 name: "focusStartStopButton"; when: (cluster.startStop == 1)
+                 PropertyChanges { target: startStopbutton; scale: 0.9;opacity:1 }
                 }
 
-                transitions: Transition {
-                    NumberAnimation { properties: "scale"; duration: 100 }
+                transitions: Transition
+                {
+                 NumberAnimation { properties: "scale"; duration: 100 }
                 }
 
-                activeFocusOnTab: true
-                Keys.onSpacePressed: {
+                //activeFocusOnTab: true
+               /* Keys.onReturnPressed:
+                {
+                   cluster.navigation_step += 1;
+                   if(cluster.navigation_step==2)
+                   {
+                    cluster.startStop = 0;
                     flipped = !flipped
                     cluster.startFlag = !cluster.startFlag
                     if(cluster.startFlag == true)
@@ -1738,9 +1847,40 @@ ApplicationWindow {
                         fuelAnnimation.stop()
 
                     }
-                }
+                  }
+                }*/
             }
         }
+function startstop()
+{
+    flipped = !flipped
+    cluster.startFlag = !cluster.startFlag
+    if(cluster.startFlag == true)
+    {
+
+        dialEffectStop.stop()                      // stop dial animation
+        dialEffectStart.start()                    // start dial effect animation
+        indicatorAnimateFocus.stop()               // stop indicator animation
+        indicatorAnimatedDim.start()               // startindictor effect animation
+        rpmAndspeedUpdate.running = true           // start rpmAndspeedUpdate timer
+        dummyAnimation.running=true
+        fuelAnnimation.start()
+
+
+
+    }
+    else {
+
+        dialEffectStart.stop()                     // stop dial effect animation
+        dialEffectStop.start()                     // start dial effect stop animation
+        indicatorAnimateFocus.start()              // start indicator focus annimation
+        indicatorAnimatedDim.stop()                // stop indicator animation
+        dummyAnimation.running=false
+        fuelAnnimation.stop()
+
+    }
+
+}
 
         SequentialAnimation on fuelDummy {
             id:fuelAnnimation

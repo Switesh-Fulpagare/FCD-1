@@ -23,7 +23,7 @@ Item {
         height:Heightt
     }
 
-    Keys.onSpacePressed: {
+    Keys.onReturnPressed: {
         switch(index){
 
         case 0:

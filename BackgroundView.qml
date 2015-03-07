@@ -8,6 +8,8 @@ FocusScope {
         x:50;width:370;height:370
         focus: true
         orientation: ListView.Horizontal
+        keyNavigationWraps :true
+
         model:backgroundOption; cacheBuffer: 100
         delegate: BackgrouldDelegate {}
 
