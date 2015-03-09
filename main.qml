@@ -46,7 +46,7 @@ ApplicationWindow {
         property bool brakeFlag: false
 
 
-        property string configurablePointer:"image/Pointer6.png"
+        property string configurablePointer:"image/Pointer5.png"
         property string configurableBackground:""//"image/Skin_4.png"
         property string configurableDial:"image/original Speedo.png"
         property int configurableDial_index:3

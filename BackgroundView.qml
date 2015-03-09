@@ -40,12 +40,12 @@ FocusScope {
             widthh:1082
             Heightt:480
         }
-        ListElement{
+       /* ListElement{
             sourcee:"image/Skin_16.png"
             scalee:0.22
             widthh:1082
             Heightt:480
-        }
+        }*/
         ListElement{
             sourcee:"image/Skin_4.png"
             scalee: 0.22
