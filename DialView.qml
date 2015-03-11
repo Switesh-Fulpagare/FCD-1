@@ -9,6 +9,7 @@ FocusScope {
         focus: true
         orientation: ListView.Horizontal
         keyNavigationWraps :true
+        highlightMoveDuration: 280
         model:switch(cluster.configurableBackground_index){case 9:skin_9_dialOption;break;case 3:skin_3_dialOption;break;case 12:skin_12_dialOption;break;default:dialOption;}
         cacheBuffer: 100
         delegate: DialDelegate {}

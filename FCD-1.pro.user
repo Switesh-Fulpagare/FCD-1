@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 3.1.2, 2015-03-07T16:56:36. -->
+<!-- Written by QtCreator 3.1.2, 2015-03-10T17:31:45. -->
 <qtcreator>
  <data>
   <variable>ProjectExplorer.Project.ActiveTarget</variable>
@@ -397,12 +397,12 @@
       <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName"></value>
       <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">RemoteLinux.DirectUploadStep</value>
       <valuelist type="QVariantList" key="Qt4ProjectManager.MaemoRunConfiguration.LastDeployedFiles">
-       <value type="QString">/home/msil/Target_Board/Yocto_BSP/Qt5_Creator_Examples/Switesh/Github_Repository_Switesh/FCD-1/11.Commits on Feb 4, 2015/FCD-1</value>
-       <value type="QString">/home/msil/Target_Board/Yocto_BSP/Qt5_Creator_Examples/Switesh/Github_Repository_Switesh/FCD-1/9.Commits on Jan 28, 2015/FCD-1</value>
-       <value type="QString">/home/msil/Target_Board/Yocto_BSP/Qt5_Creator_Examples/Switesh/Github_Repository_Switesh/FCD-1/Next_update_3/FCD-1/FCD-1</value>
-       <value type="QString">/home/msil/Target_Board/Yocto_BSP/Qt5_Creator_Examples/Switesh/Github_Repository_Switesh/FCD-1/9.Commits on Jan 28, 2015/nileshkokane01-MindaCluster/FCD-1</value>
        <value type="QString">/home/msil/Target_Board/Yocto_BSP/Qt5_Creator_Examples/Switesh/Github_Repository_Switesh/FCD-1/7.Commits on Jan 28, 2015/nileshkokane01-MindaCluster/FCD-1</value>
+       <value type="QString">/home/msil/Target_Board/Yocto_BSP/Qt5_Creator_Examples/Switesh/Github_Repository_Switesh/FCD-1/Next_update_3/FCD-1/FCD-1</value>
        <value type="QString">/home/msil/Target_Board/Yocto_BSP/Qt5_Creator_Examples/Switesh/Github_Repository_Switesh/FCD-1/Next_update/FCD-1/FCD-1</value>
+       <value type="QString">/home/msil/Target_Board/Yocto_BSP/Qt5_Creator_Examples/Switesh/Github_Repository_Switesh/FCD-1/9.Commits on Jan 28, 2015/nileshkokane01-MindaCluster/FCD-1</value>
+       <value type="QString">/home/msil/Target_Board/Yocto_BSP/Qt5_Creator_Examples/Switesh/Github_Repository_Switesh/FCD-1/9.Commits on Jan 28, 2015/FCD-1</value>
+       <value type="QString">/home/msil/Target_Board/Yocto_BSP/Qt5_Creator_Examples/Switesh/Github_Repository_Switesh/FCD-1/11.Commits on Feb 4, 2015/FCD-1</value>
       </valuelist>
       <valuelist type="QVariantList" key="Qt4ProjectManager.MaemoRunConfiguration.LastDeployedHosts">
        <value type="QString">192.168.76.215</value>
@@ -429,12 +429,12 @@
        <value type="QString">/opt/poky/1.6.1/sysroots/cortexa9hf-vfp-neon-poky-linux-gnueabi</value>
       </valuelist>
       <valuelist type="QVariantList" key="Qt4ProjectManager.MaemoRunConfiguration.LastDeployedTimes">
-       <value type="QDateTime">2015-03-07T16:52:55</value>
-       <value type="QDateTime">2015-01-30T10:46:03</value>
-       <value type="QDateTime">2015-01-22T09:19:05</value>
-       <value type="QDateTime">2015-01-28T13:26:40</value>
        <value type="QDateTime">2015-01-28T12:41:54</value>
+       <value type="QDateTime">2015-01-22T09:19:05</value>
        <value type="QDateTime">2015-01-16T15:37:56</value>
+       <value type="QDateTime">2015-01-28T13:26:40</value>
+       <value type="QDateTime">2015-01-30T10:46:03</value>
+       <value type="QDateTime">2015-03-10T15:21:12</value>
       </valuelist>
       <value type="bool" key="RemoteLinux.GenericDirectUploadStep.IgnoreMissingFiles">false</value>
       <value type="bool" key="RemoteLinux.GenericDirectUploadStep.Incremental">true</value>

@@ -9,7 +9,7 @@ FocusScope {
         focus: true
         orientation: ListView.Horizontal
         keyNavigationWraps :true
-
+        highlightMoveDuration:250
         model:backgroundOption; cacheBuffer: 100
         delegate: BackgrouldDelegate {}
 

@@ -1022,7 +1022,7 @@ ApplicationWindow {
         Item{
             id:skin_Blank
             //anchors.centerIn: cluster.Center
-            x:140;
+            x:140
             y:60
             scale: 0.8
 
