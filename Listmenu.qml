@@ -4,7 +4,7 @@ FocusScope {
     clip: true
     ListView {
         id: list2
-        x:3;height:150;//width:250;
+        x:32;height:150;//width:250;
         focus:true
         orientation: ListView.Vertical
         keyNavigationWraps :true
